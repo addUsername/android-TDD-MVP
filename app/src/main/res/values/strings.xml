@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PMDDMM_p1</string>
+    <string name="toast">Se ha realizado la reserva de plaza</string>
+    <string name="gmaps">ver en Gmaps</string>
+    <string name="chrome">Abrir en el navegador</string>
+    <string name="titleForm">Formulario</string>
+    <string name="formName">Nombre</string>
+    <string name="formSurname">Apellidos</string>
+    <string name="formPhone">Telefono</string>
+    <string name="formEmail">Email</string>
+    <string name="formComments">Commentarios</string>
+    <string name="formSubmit">Enviar</string>
+</resources>
