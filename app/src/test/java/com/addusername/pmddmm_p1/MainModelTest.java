@@ -2,7 +2,6 @@ package com.addusername.pmddmm_p1;
 
 import com.addusername.pmddmm_p1.model.FormPojo;
 import com.addusername.pmddmm_p1.model.MainModel;
-import com.addusername.pmddmm_p1.presenter.MainPresenter;
 
 import org.junit.Assert;
 import org.junit.Before;
