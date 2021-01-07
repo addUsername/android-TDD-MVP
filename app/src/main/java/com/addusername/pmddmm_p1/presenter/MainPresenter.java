@@ -7,7 +7,6 @@ import com.addusername.pmddmm_p1.interfaces.ProvidedPresenterOps;
 import com.addusername.pmddmm_p1.interfaces.RequiredPresenterOps;
 import com.addusername.pmddmm_p1.interfaces.RequiredViewOps;
 import com.addusername.pmddmm_p1.model.FormPojo;
-import com.addusername.pmddmm_p1.model.MainModel;
 
 /**
  *  implementamos la validacion del formulario en la capa de presentacion por esto:
@@ -19,11 +18,8 @@ public class MainPresenter implements ProvidedPresenterOps, RequiredPresenterOps
 
     private RequiredViewOps rvo;
     private ProvidedModelOps pmo;
+    private String URL =  "http://google.com";
 
-    public MainPresenter(RequiredViewOps rvo){
-        this.rvo = rvo;
-        this.pmo = new MainModel();
-    }
     /**
      * Test purposes
      * @param rvo Mock
@@ -33,19 +29,41 @@ public class MainPresenter implements ProvidedPresenterOps, RequiredPresenterOps
         this.rvo = rvo;
         this.pmo = pmo;
     }
+
     @Override
-    public void submit(String[] form) {
-        FormPojo fp = pmo.parseFrom(form);
-        if(ValidatorForm.isFormValid(fp)){
-            if(pmo.save(fp)){
-                rvo.showToast();
-                rvo.navigateToWebView();
-            }
+    public void menu(String item) {
+        switch (item){
+            case "openGmaps":
+                // todo rvo.openGmaps();
+                break;
+            case "viewOnChrome":
+                rvo.navegateToWebView(URL,true);
+                break;
+            case "viewDocs":
+                // todo rvo.navegateToWebView(URLDOCS,false);
+                break;
+            default:
+                //can't reach here
+                break;
         }
     }
 
     @Override
+    public void submit(String[] form) {
+        FormPojo fp = pmo.parseFrom(form);
+        if(ValidatorForm.isFormValid(fp) && pmo.save(fp)){
+            rvo.showToast();
+            rvo.navegateToWebView(URL,false);
+        }
+    }
+    @Override
     public boolean shouldEnableSubmit(String[] inputs) {
+
+        if(ValidatorForm.isFormValid(pmo.parseFrom(inputs))){
+            rvo.enableSubmitButton(true);
+            return true;
+        }
+        rvo.enableSubmitButton(false);
         return false;
     }
 
@@ -68,6 +86,8 @@ public class MainPresenter implements ProvidedPresenterOps, RequiredPresenterOps
             case "comments":
                 rvo.changeStatus(componentId,ValidatorForm.isCommentValid(textToValidate));
                 break;
+            default:
+                // Can't be reached
         }
     }
 }

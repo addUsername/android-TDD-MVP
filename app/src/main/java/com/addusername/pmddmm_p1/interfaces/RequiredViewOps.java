@@ -7,6 +7,7 @@ package com.addusername.pmddmm_p1.interfaces;
 public interface RequiredViewOps {
 
     void showToast();
-    void navigateToWebView();
+    void navegateToWebView(String url, boolean shouldUseChrome);
     void changeStatus(int id, boolean b);
+    void enableSubmitButton(boolean b);
 }

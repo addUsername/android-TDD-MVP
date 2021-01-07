@@ -9,4 +9,5 @@ public interface ProvidedPresenterOps {
     void submit(String[] dataForm);
     void validate(int componentId, String componentName, String textToValidate);
     boolean shouldEnableSubmit(String[] inputs);
+    void menu(String item);
 }

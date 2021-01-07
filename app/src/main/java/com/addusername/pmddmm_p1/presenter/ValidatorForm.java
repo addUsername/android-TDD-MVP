@@ -1,10 +1,12 @@
 package com.addusername.pmddmm_p1.presenter;
 
-import android.util.Log;
-
 import com.addusername.pmddmm_p1.model.FormPojo;
 
 public class ValidatorForm {
+    /**
+     * "Add a private constructor to hide the implicit public one" ok
+     */
+    private ValidatorForm(){}
     /**
      * Valida el email, case-sensitive y max caracteres = 222
      * @param email
@@ -40,20 +42,16 @@ public class ValidatorForm {
         return (!comment.matches("^.*[<\"]*.*$"));
     }
 
+    /**
+     * TODO fix comment validator
+     * @param form1
+     * @return
+     */
     public static boolean isFormValid(FormPojo form1) {
         boolean toReturn = isNameValid(form1.getName()) &&
                 isNameValid(form1.getSurname()) &&
                 isPhoneValid(form1.getPhone()) &&
                 isEmailValid(form1.getEmail());
-                //todo wtf commentvalid returns false but it passes tests¿?¿?
-                //&& isCommentValid(form1.getComments());
-        System.out.println(form1.getComments());
-        System.out.println(isNameValid(form1.getName()));
-        System.out.println(isNameValid(form1.getSurname()));
-        System.out.println(isPhoneValid(form1.getPhone()));
-        System.out.println(isEmailValid(form1.getEmail()));
-        System.out.println( isCommentValid(form1.getComments()) );
-
         return toReturn;
     }
 }
