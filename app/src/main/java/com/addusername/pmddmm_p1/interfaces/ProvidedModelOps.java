@@ -8,6 +8,18 @@ import com.addusername.pmddmm_p1.model.FormPojo;
  */
 public interface ProvidedModelOps {
 
+    /**
+     * Parsea {@link String}[] a {@link FormPojo}
+     * @param formData
+     * @return
+     */
     FormPojo parseFrom(String[] formData);
+
+    /**
+     * Guarda el  {@link FormPojo}
+     * TODO implementar firebase y mirar duplicados
+     * @param fp
+     * @return
+     */
     boolean save(FormPojo fp);
 }

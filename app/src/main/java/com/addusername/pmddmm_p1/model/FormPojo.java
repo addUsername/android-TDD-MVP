@@ -7,17 +7,23 @@ public class FormPojo {
     private String phone;
     private String email;
     private String comments;
+    private String mode;
 
 
     public FormPojo(){}
 
-    public FormPojo(String name, String surname, String phone, String email, String comments) {
+    public FormPojo(String name, String surname, String phone, String email, String comments, String mode) {
         this.name = name;
         this.surname = surname;
         this.phone = phone;
         this.email = email;
         this.comments = comments;
+        this.mode = mode;
     }
+
+    public String getMode() { return mode; }
+
+    public void setMode(String mode) { this.mode = mode; }
 
     public String getName() { return name; }
 

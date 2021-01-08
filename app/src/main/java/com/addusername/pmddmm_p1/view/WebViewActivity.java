@@ -1,17 +1,14 @@
 package com.addusername.pmddmm_p1.view;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import androidx.annotation.Nullable;
 
 import com.addusername.pmddmm_p1.R;
-import com.addusername.pmddmm_p1.interfaces.RequiredViewOps;
 import com.addusername.pmddmm_p1.interfaces.RequiredWebViewOps;
 
 public class WebViewActivity extends Activity implements RequiredWebViewOps {
