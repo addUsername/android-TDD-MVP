@@ -10,7 +10,7 @@ public class ValidatorFormTest {
 
     @Test
     public void isFormValid_validForm_true(){
-        FormPojo form1 = new FormPojo("name","surname","+34000000000","email@email.com","comment  c s");
+        FormPojo form1 = new FormPojo("name","surname","+34000000000","email@email.com","comment  c s","online");
 
         boolean isValid1 = ValidatorForm.isFormValid(form1);
 
@@ -18,9 +18,9 @@ public class ValidatorFormTest {
     }
     @Test
     public void isFormValid_invalidForm_false(){
-        FormPojo form1 = new FormPojo("name","surname","phone","email@email.com","comments");
-        FormPojo form2 = new FormPojo("na me","sur name","+34910000000","emailemail.com","comments");
-        FormPojo form3 = new FormPojo("nam1!e","surname","phone","email@email.com","comments");
+        FormPojo form1 = new FormPojo("name","surname","phone","email@email.com","comments","online");
+        FormPojo form2 = new FormPojo("na me","sur name","+34910000000","emailemail.com","comments","online");
+        FormPojo form3 = new FormPojo("nam1!e","surname","phone","email@email.com","comments","online");
 
         boolean isValid1 = ValidatorForm.isFormValid(form1);
         boolean isValid2 = ValidatorForm.isFormValid(form2);
