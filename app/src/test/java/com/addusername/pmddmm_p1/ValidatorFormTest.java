@@ -33,7 +33,7 @@ public class ValidatorFormTest {
     @Test
     public void isCommentValid_invalidComment_false(){
         final String comment1 = "AsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdfAsdf";
-        final String comment2 = "<img src=''..";
+        final String comment2 = "<img src=''../>";
 
         boolean isValid1 = ValidatorForm.isCommentValid(comment1);
         boolean isValid2 = ValidatorForm.isCommentValid(comment2);

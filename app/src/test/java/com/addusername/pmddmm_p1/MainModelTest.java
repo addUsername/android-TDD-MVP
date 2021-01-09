@@ -17,15 +17,14 @@ public class MainModelTest {
 
     @Test
     public void parseFrom_validForm_notNull(){
-        String[] formData = {"name","surname","610000000","email@email.com","comments"};
+        String[] formData = {"name","surname","610000000","email@email.com","comments","mode"};
         FormPojo fp = mm.parseFrom(formData);
         Assert.assertNotNull("not null",fp);
     }
     @Test(expected = IndexOutOfBoundsException.class)
     public void parseFrom_inValidForm_exception(){
-        String[] formData = {"name","surname","610000000","comments"};
+        String[] formData = {"name","surname","610000000","comments","mode"};
         mm.parseFrom(formData);
     }
-
     //todo save()
 }
