@@ -34,24 +34,23 @@ public class ValidatorForm {
         return name.matches("^[a-zA-Z ]+$");
     }
     /**
-     * Valida que el commentario no tenga caracteres extraños.
+     * Valida que el commentario no tenga etiquetas html.
      * @param comment
      * @return
      */
     public static boolean isCommentValid(String comment){
-        return (!comment.matches("^.*[<\"]*.*$"));
+        return (!comment.matches("^.*<.*?>*.$") && comment.length()<400);
     }
 
     /**
-     * TODO fix comment validator
      * @param form1
      * @return
      */
     public static boolean isFormValid(FormPojo form1) {
-        boolean toReturn = isNameValid(form1.getName()) &&
+        return  isNameValid(form1.getName()) &&
                 isNameValid(form1.getSurname()) &&
                 isPhoneValid(form1.getPhone()) &&
-                isEmailValid(form1.getEmail());
-        return toReturn;
+                isEmailValid(form1.getEmail()) &&
+                isCommentValid(form1.getComments());
     }
 }

@@ -1,14 +1,10 @@
 package com.addusername.pmddmm_p1.presenter;
 
-import android.util.Log;
-
 import com.addusername.pmddmm_p1.interfaces.ProvidedModelOps;
 import com.addusername.pmddmm_p1.interfaces.ProvidedPresenterOps;
 import com.addusername.pmddmm_p1.interfaces.RequiredPresenterOps;
 import com.addusername.pmddmm_p1.interfaces.RequiredViewOps;
 import com.addusername.pmddmm_p1.model.FormPojo;
-
-import java.io.File;
 
 /**
  *  El presentador actúa sobre el modelo y la vista. Recupera datos de los repositorios (el modelo),
@@ -23,8 +19,8 @@ public class MainPresenter implements ProvidedPresenterOps, RequiredPresenterOps
 
     private RequiredViewOps rvo;
     private ProvidedModelOps pmo;
-    private String URL =  "http://google.com";
-    private String POSITION_GMAPS = "46.414382,10.013988";
+    private static final String URL =  "https://google.com";
+    private static final String POSITION_GMAPS = "46.414382,10.013988";
 
     /**
      * Constructor
@@ -110,8 +106,6 @@ public class MainPresenter implements ProvidedPresenterOps, RequiredPresenterOps
      */
     @Override
     public void validate(int componentId, String componentName, String textToValidate) {
-
-        Log.d("changeStatus",componentName+" "+textToValidate+" "+componentId);
 
         switch (componentName){
             case "name":

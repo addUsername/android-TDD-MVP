@@ -23,15 +23,13 @@ public class MainModel implements ProvidedModelOps {
 
     /**
      * @InheritDoc
-     *  TODO implement all this thing.
+     *  TODO implement this whole thing.
      * Store object in firebase
      * @param fp
      * @return
      */
     @Override
     public boolean save(FormPojo fp) {
-        //TODO check if email/phone exists
-        // save to firebase statically
         return true;
     }
 }

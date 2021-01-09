@@ -1,5 +1,8 @@
 package com.addusername.pmddmm_p1.model;
 
+/**
+ * Esta clase representa el objeto fromulario de MainView y MainModel
+ */
 public class FormPojo {
 
     private String name;

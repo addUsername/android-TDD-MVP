@@ -2,13 +2,13 @@ package com.addusername.pmddmm_p1.view;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,6 +48,7 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
+        ((MenuBuilder) menu).setOptionalIconsVisible(true);
         inflater.inflate(R.menu.menu , menu);
         return true;
     }
@@ -70,6 +71,7 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
      */
     private void setup() {
         submit = findViewById(R.id.button);
+        submit.setEnabled(false);
         spinner = findViewById(R.id.spinner);
 
         mp = new MainPresenter(this, new MainModel());
@@ -88,12 +90,11 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
         View.OnFocusChangeListener listener = new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus || hasFocus){
-                    mp.validate(
-                            v.getId(),
-                            v.getResources().getResourceName(v.getId()).split("id/")[1],
-                            components.get(v.getId()).getText().toString());
-                }
+
+                mp.validate(
+                        v.getId(),
+                        v.getResources().getResourceName(v.getId()).split("id/")[1],
+                        components.get(v.getId()).getText().toString());
                 mp.shouldEnableSubmit(getInputs());
             }
         };
@@ -101,7 +102,6 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
             input.setOnFocusChangeListener(listener);
         }
     }
-
     /**
      * Parsea {@link MenuItem#getItemId()} a {@link String} y llama a {@link MainPresenter#menu(String)}
      * @param item
@@ -120,6 +120,7 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
                 break;
             case R.id.github:
                 mp.menu("github");
+                break;
             default:
                 break;
         }
@@ -141,7 +142,6 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
      */
     private void showAlertDialog() {
         AlertDialog.Builder adb = new AlertDialog.Builder(this);
-        //adb.setView(new AlertDialogLayout());
         adb.setTitle(getString(R.string.dialogTitle));
         adb.setIcon(android.R.drawable.ic_dialog_alert);
         adb.setPositiveButton(getString(R.string.dialogOk), new DialogInterface.OnClickListener() {
@@ -151,8 +151,9 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
             }
         });
         adb.setNegativeButton(getString(R.string.dialogCancel), new DialogInterface.OnClickListener() {
+            @Override
             public void onClick(DialogInterface dialog, int which) {
-
+                //do nothing
             }
         });
         adb.show();
@@ -186,8 +187,8 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }
-
     /**
+     * Make toast
      * @InheritDoc
      */
     @Override
@@ -213,8 +214,8 @@ public class MainView extends AppCompatActivity implements RequiredViewOps {
     /**
      * @InheritDoc
      *
-     * @param id
-     * @param b
+     * @param id EditText to set background color
+     * @param b If(b) {@link Color#green} else {@link Color#red}
      */
     @Override
     public void changeStatus(int id, boolean b) {

@@ -1,7 +1,5 @@
 package com.addusername.pmddmm_p1.interfaces;
 
-import android.graphics.drawable.Drawable;
-
 /**
  * Operaciones a las cuales tiene acceso el Presentador y son implementadas por la Vista.
  * Permiten que el Presentador se comunique con la Vista. {@link com.addusername.pmddmm_p1.view.MainView}
