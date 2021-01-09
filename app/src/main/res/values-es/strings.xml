@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">PMDDMM_p1</string>
+    <!-- Form -->
+    <string name="titleForm">Formulario</string>
+    <string name="formName">Nombre</string>
+    <string name="formSurname">Apellidos</string>
+    <string name="formPhone">Telefono</string>
+    <string name="formEmail">Email</string>
+    <string name="formComments">Commentarios</string>
+    <string name="formSubmit">Enviar</string>
+    <!-- Toast -->
+    <string name="booked">Se ha realizado la reserva de la plaza</string>
+    <!-- AlertDialog -->
+    <string name="dialogOk">Ok</string>
+    <string name="dialogCancel">Cancelar</string>
+    <string name="dialogTitle">¿Desea continuar?</string>
+    <!-- Menu -->
+    <string name="Docs">Docs</string>
+    <string name="github">Github</string>
+    <string name="gmaps">ver en Gmaps</string>
+    <string name="chrome">Abrir en el navegador</string>
+    <!-- Spinner items name -->
+    <string name="online">A distancia</string>
+    <string name="classroom">Presencial</string>
+</resources>

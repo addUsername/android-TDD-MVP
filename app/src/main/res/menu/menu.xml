@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/openGmaps"
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/openGmaps"
+        android:icon="@drawable/ic_menu_item1"
         android:onClick="menuClick"
-        android:title="@string/gmaps" />
-    <item android:id="@+id/viewOnChrome"
+        android:title="@string/gmaps"/>
+    <item
+        android:id="@+id/viewOnChrome"
+        android:icon="@drawable/ic_menu_item2"
         android:onClick="menuClick"
         android:title="@string/chrome" />
+    <item
+        android:id="@+id/viewDocs"
+        android:icon="@drawable/ic_menu_item3"
+        android:onClick="menuClick"
+        android:title="@string/Docs" />
+    <item
+        android:id="@+id/github"
+        android:icon="@drawable/ic_menu_item4"
+        android:onClick="menuClick"
+        android:title="@string/github" />
 </menu>
